@@ -2,4 +2,4 @@ numpy
 
 pytest
 pytest-pep8
-pytest-conv
+pytest-cov
