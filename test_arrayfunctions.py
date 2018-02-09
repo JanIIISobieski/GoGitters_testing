@@ -1,3 +1,6 @@
+import pytest
+
+
 def test_find_max_diff():
     from arrayfunctions import max_diff
     from math import isclose
@@ -13,3 +16,20 @@ def test_find_max_diff():
     assert list_3_diff == 0
     assert isclose(list_4_diff, 0.105, abs_tol=10e-9)
     assert list_5_diff == [-7, 7]
+
+
+def test_max_diff_exceptions():
+    from arrayfunctions import max_diff
+
+    with pytest.raises(ValueError):
+        list1 = max_diff([])
+
+    with pytest.raises(ValueError):
+        list2 = max_diff([1])
+
+    with pytest.raises(TypeError):
+        list3 = max_diff([0, 1, 2, 'Hello'])
+
+    assert list1 is None
+    assert list2 is None
+    assert list3 is None
