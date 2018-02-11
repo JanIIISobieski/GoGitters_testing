@@ -14,3 +14,7 @@ def max_diff(list_input):
         maxdiff = [min(diff_var), max(diff_var)]
 
     return maxdiff
+
+def sum_list(list):
+	import numpy as np
+    return np.sum(list)
