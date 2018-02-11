@@ -18,3 +18,10 @@ def max_diff(list_input):
 def sum_list(list):
 	import numpy as np
     return np.sum(list)
+
+def min_max(number_list):
+	import numpy as np
+    min_val = np.amin(number_list)
+    max_val = np.amax(number_list)
+    minmax_out = (min_val, max_val)
+    return minmax_out
