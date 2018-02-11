@@ -18,18 +18,21 @@ def test_find_max_diff():
     assert list_5_diff == [-7, 7]
 
 
-def test_max_diff_exceptions():
+def test_max_diff_exceptions(capsys):
     from arrayfunctions import max_diff
 
-    with pytest.raises(ValueError):
-        list1 = max_diff([])
+    list1 = max_diff([])
+    out1, err1 = capsys.readouterr()
 
-    with pytest.raises(ValueError):
-        list2 = max_diff([1])
+    list2 = max_diff([1])
+    out2, err2 = capsys.readouterr()
 
-    with pytest.raises(TypeError):
-        list3 = max_diff([0, 1, 2, 'Hello'])
+    list3 = max_diff([0, 1, 2, 'Hello'])
+    out3, err3 = capsys.readouterr()
 
     assert list1 is None
     assert list2 is None
     assert list3 is None
+    assert out1 == 'Numerical list must be at least of length 2\n'
+    assert out2 == 'Numerical list must be at least of length 2\n'
+    assert out3 == 'Only numerical lists accepted\n'
