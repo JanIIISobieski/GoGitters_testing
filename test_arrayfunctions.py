@@ -13,10 +13,10 @@ def test_find_max_diff():
     assert list_3_diff == 0
     assert isclose(list_4_diff, 0.105, abs_tol=10e-9)
     assert list_5_diff == [-7, 7]
-	
+
 
 def test_sum_list():
-	from arrayfunctions import sum_list
+    from arrayfunctions import sum_list
     sum_1 = sum_list([5])
     sum_2 = sum_list([2, 7])
     sum_3 = sum_list([4, 8.5, 1.2])
@@ -31,7 +31,7 @@ def test_sum_list():
 
 
 def test_minmax():
-	from arrayfunctions import min_max
+    from arrayfunctions import min_max
     x = [1, 5, 3, 9, 5, 6]
     y = [1.5, 3, 4, 912, 10.4, 0, 0]
     z = [1.239, 1.2459, 5.6, -5]
