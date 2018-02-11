@@ -36,3 +36,28 @@ def test_max_diff_exceptions(capsys):
     assert out1 == 'Numerical list must be at least of length 2\n'
     assert out2 == 'Numerical list must be at least of length 2\n'
     assert out3 == 'Only numerical lists accepted\n'
+
+
+def test_sum_list():
+    from arrayfunctions import sum_list
+    sum_1 = sum_list([5])
+    sum_2 = sum_list([2, 7])
+    sum_3 = sum_list([4, 8.5, 1.2])
+    sum_4 = sum_list([-4, 6, -2])
+    sum_5 = sum_list([0, 0.6, -1.9, 12.3])
+
+    assert sum_1 == 5
+    assert sum_2 == 9
+    assert sum_3 == 13.7
+    assert sum_4 == 0
+    assert sum_5 == 11
+
+
+def test_minmax():
+    from arrayfunctions import min_max
+    x = [1, 5, 3, 9, 5, 6]
+    y = [1.5, 3, 4, 912, 10.4, 0, 0]
+    z = [1.239, 1.2459, 5.6, -5]
+    assert min_max(x) == (1, 9)
+    assert min_max(y) == (0, 912)
+    assert min_max(z) == (-5, 5.6)
