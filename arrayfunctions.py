@@ -11,8 +11,8 @@ def max_diff(list_input):
     consecutive elements in a numerical list
 
     :param array list_input: numerical list of at least length 2
-    :return: The maximum magnitude consecutive difference as a scalar, 
-        or a vector if equal maximum difference in positive negative directions	
+    :return: The maximum magnitude consecutive difference as a scalar,
+        or a vector if equal maximum difference in positive negative directions
     :rtype: scalar or array
     :raises ValueError: if the numerical list input is of length less than 2
     :raises TypeError: if a non-numerical list is given
