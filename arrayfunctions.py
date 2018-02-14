@@ -53,8 +53,37 @@ def max_diff(list_input):
 
 
 def sum_list(list):
+    '''Function to find the sum of all elements in a list
+
+        :param  array list: numerical list of at least length 1
+        :return: The sum of the elements in list
+        :raises ValueError: if infinity is in the input array
+        :raises TypeError: if list is empty or contains non-numericals
+        :raises ImportError: if a required package was not loaded
+        '''
     import numpy as np
-    return np.sum(list)
+    try:
+        if(float('inf') in list or float('-inf') in list):
+            raise ValueError
+        if(len(list) == 0):
+            raise TypeError
+        sum = np.sum(list)
+        logging.info('Function completed without errors')
+
+    except ImportError:
+        print('Missing Numpy')
+        logging.debug('numpy is not installed')
+        sum = None
+    except TypeError:
+        print('Only numerical lists are accepted')
+        logging.warning('sum is None')
+        sum = None
+    except ValueError:
+        print('Input contains inappropriate value')
+        logging.warning('sum is None')
+        sum = None
+
+    return sum
 
 
 def min_max(number_list):
