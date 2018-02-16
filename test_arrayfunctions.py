@@ -79,12 +79,12 @@ def test_minmax():
 def test_minmax_exceptions(capsys):
     from arrayfunctions import min_max
 
-    t1 = min_max([1])
+    t1 = min_max([])
     out1, err1 = capsys.readouterr()
     t2 = min_max(['One', 'Two', 'Three'])
     out2, err2 = capsys.readouterr()
 
     assert t1 is None
     assert t2 is None
-    assert out1 == 'Numerical list must be at least of length 2\n'
+    assert out1 == 'Numerical list must be at least of length 1\n'
     assert out2 == 'Only numerical lists accepted\n'

@@ -112,8 +112,8 @@ def min_max(number_list):
         logging.warning('Min/max is not numerical list')
         min_max_out = None
     except ValueError:
-        print('Numerical list must be at least of length 2')
-        logging.warning('Min/max not length 2')
+        print('Numerical list must be at least of length 1')
+        logging.warning('Min/max not length 1')
         min_max_out = None
 
     return min_max_out
