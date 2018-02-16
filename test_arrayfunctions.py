@@ -55,9 +55,20 @@ def test_sum_list():
 
 def test_minmax():
     from arrayfunctions import min_max
-    x = [1, 5, 3, 9, 5, 6]
-    y = [1.5, 3, 4, 912, 10.4, 0, 0]
-    z = [1.239, 1.2459, 5.6, -5]
-    assert min_max(x) == (1, 9)
-    assert min_max(y) == (0, 912)
-    assert min_max(z) == (-5, 5.6)
+    assert min_max([1, 5, 3, 9, 5, 6]) == (1, 9)
+    assert min_max([1.5, 3, 4, 912, 10.4, 0, 0]) == (0, 912)
+    assert min_max([1.239, 1.2459, 5.6, -5]) == (-5, 5.6)
+
+
+def test_minmax_exceptions(capsys):
+    from arrayfunctions import min_max
+
+    t1 = min_max([1])
+    out1, err1 = capsys.readouterr()
+    t2 = min_max(['One', 'Two', 'Three'])
+    out2, err2 = capsys.readouterr()
+
+    assert t1 is None
+    assert t2 is None
+    assert out1 == 'Numerical list must be at least of length 2\n'
+    assert out2 == 'Only numerical lists accepted\n'

@@ -58,8 +58,33 @@ def sum_list(list):
 
 
 def min_max(number_list):
-    import numpy as np
-    min_val = np.amin(number_list)
-    max_val = np.amax(number_list)
-    minmax_out = (min_val, max_val)
-    return minmax_out
+    """Finds the minimum and maximum values of a numerical list.
+
+    :param : numerical list of at least 2 elements
+    :returns : tuple containing the minimum and maximum values of input list
+    :raises : ImportError
+    :raises : TypeError
+    :raises : ValueError
+    """
+    try:
+        import numpy as np
+        min_val = np.amin(number_list)
+        max_val = np.amax(number_list)
+        min_max_out = (min_val, max_val)
+
+        logging.info('Function was completed successfully.')
+
+    except ImportError:
+        print('Missing package: numpy')
+        logging.debug('Required package numpy is not installed')
+        min_max_out = None
+    except TypeError:
+        print('Only numerical lists accepted')
+        logging.warning('Min/max is not numerical list')
+        min_max_out = None
+    except ValueError:
+        print('Numerical list must be at least of length 2')
+        logging.warning('Min/max not length 2')
+        min_max_out = None
+
+    return min_max_out
