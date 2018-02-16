@@ -89,11 +89,11 @@ def sum_list(list):
 def min_max(number_list):
     """Finds the minimum and maximum values of a numerical list.
 
-    :param : numerical list of at least 2 elements
-    :returns : tuple containing the minimum and maximum values of input list
-    :raises : ImportError
-    :raises : TypeError
-    :raises : ValueError
+    :param number_list: numerical list of at least 2 elements
+    :returns: tuple containing the minimum and maximum values of input list
+    :raises ImportError: if numpy is not installed
+    :raises TypeError: if a non-numerical list is given
+    :raises ValueError: if a numerical list is not of at least length 2
     """
     try:
         import numpy as np
