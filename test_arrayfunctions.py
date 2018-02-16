@@ -38,7 +38,7 @@ def test_max_diff_exceptions(capsys):
     assert out3 == 'Only numerical lists accepted\n'
 
 
-def test_sum_list():
+def test_sum_list(capsys):
     from arrayfunctions import sum_list
     sum_1 = sum_list([5])
     sum_2 = sum_list([2, 7])
@@ -46,11 +46,27 @@ def test_sum_list():
     sum_4 = sum_list([-4, 6, -2])
     sum_5 = sum_list([0, 0.6, -1.9, 12.3])
 
+    # exceptions
+    sum_6 = sum_list([0, 5, 'Heya'])
+    out6, err6 = capsys.readouterr()
+    sum_7 = sum_list([])
+    out7, err7 = capsys.readouterr()
+    sum_8 = sum_list([5, float('inf')])
+    out8, err8 = capsys.readouterr()
+
     assert sum_1 == 5
     assert sum_2 == 9
     assert sum_3 == 13.7
     assert sum_4 == 0
     assert sum_5 == 11
+
+    assert sum_6 is None
+    assert sum_7 is None
+    assert sum_8 is None
+    # 6 raises TypeError, 7 raises TypeError, 8 raises ValueError
+    assert out6 == 'Only numerical lists are accepted\n'
+    assert out7 == 'Only numerical lists are accepted\n'
+    assert out8 == 'Input contains inappropriate value\n'
 
 
 def test_minmax():
