@@ -35,27 +35,29 @@ class Array:
 
             logging.info('max_diff() completed without errors')
 
-        except ValueError:
-            print('Numerical list must be at least of length 2')
-            logging.warning('Found max diff is of type None')
+        except ImportError:
+            # This file does not use any non-standard python packages
+            print('Missing package... or basic python installation')
+            logging.debug('Required package is not installed')
             maxdiff = None
         except TypeError:
             print('Only numerical lists accepted')
             logging.warning('Found max diff is of type None')
             maxdiff = None
-        except ImportError:
-            # This file does not use any non-standard python packages
-            print('Missing package... or basic python installation')
-            logging.debug('Required package is not installed')
+        except ValueError:
+            print('Numerical list must be at least of length 2')
+            logging.warning('Found max diff is of type None')
             maxdiff = None
 
         self.max_diff = maxdiff
 
     def find_extrema(self):
         try:
-            import numpy as np
-            min_val = np.amin(self.array)
-            max_val = np.amax(self.array)
+            from numpy import amin, amax
+            if(len(self.array) < 2):
+                raise ValueError
+            min_val = amin(self.array)
+            max_val = amax(self.array)
             min_max_out = (min_val, max_val)
 
             logging.info('find_extrema() completed successfully.')
@@ -66,25 +68,23 @@ class Array:
             min_max_out = None
         except TypeError:
             print('Only numerical lists accepted')
-            logging.warning('Min/max is not numerical list')
+            logging.warning('Only numerical lists accepted')
             min_max_out = None
         except ValueError:
-            print('Numerical list must be at least of length 1')
-            logging.warning('Min/max not length 1')
+            print('Numerical list must be at least of length 2')
+            logging.warning('Numerical list must be at least of length 2')
             min_max_out = None
 
         self.extrema = min_max_out
 
     def find_sum_all(self):
-        import numpy as np
+        from numpy import sum
         try:
-            if(float('inf') in self.array or float('-inf') in self.array):
+            if(len(self.array) < 2):
                 raise ValueError
-            if(len(self.array) == 0):
-                raise TypeError
-            sumall = np.sum(self.array)
+            sumall = sum(self.array)
 
-            logging.info('Function completed without errors')
+            logging.info('sum_all() completed without errors')
 
         except ImportError:
             print('Missing numpy')
@@ -92,11 +92,11 @@ class Array:
             sumall = None
         except TypeError:
             print('Only numerical lists are accepted')
-            logging.warning('sum is None')
+            logging.warning('Found sum is of type None')
             sumall = None
         except ValueError:
-            print('Input contains inappropriate value')
-            logging.warning('sum is None')
+            print('Numerical list must be at least of length 2')
+            logging.warning('Found sum is of type None')
             sumall = None
 
         self.sum_all = sumall
