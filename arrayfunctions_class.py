@@ -7,18 +7,46 @@ logging.basicConfig(filename="arrayfunctions.log",
 
 
 class Array:
+    '''Class to describe the numerical contents of the array
 
+    :attribute sum_all (int or float): the sum of all the elements in the array
+    :attribute extrema (tuple): the minimum and maximum elements in the array
+    :attribute max_diff (int, float, or array): the maximum mangnitude
+        difference between consecutive element in array
+    '''
     def __init__(self,
                  array=[1, 6, 8, 9],
                  sum_all=None,
                  extrema=None,
                  max_diff=None):
+        '''__init__ method of the Array class
+
+        :param array (int or float, default=[1, 6, 8, 9]): numerical array of
+            at least length 2
+        :param sum_all (int or float, optional, default=None): the sum of all
+            element in array
+        :param extrema (tuple, optional, default=None): the minimum and maximum
+            elements in array
+        :param max_diff (int, float, or array, optional, default=None): the
+            maximum magnitude difference between consecutive elements in array
+        '''
         self.array = array
         self.sum_all = sum_all
         self.extrema = extrema
         self.max_diff = max_diff
 
     def find_max_diff(self):
+        '''Method to find the maximum difference between consecutive elements
+
+        :return: The maximum magnitude consecutive difference as a scalar,
+            or a vector if equal maximum difference in positive negative
+            directions
+        :rtype: int, float, or array
+        :raises ValueError: if the numerical list input is of length less than
+            2
+        :raises TypeError: if a non-numerical list is given
+        :raises ImportError: if a required package was not loaded
+        '''
         diff_var = []
         try:
             for i in range(0, len(self.array)-1):
@@ -52,6 +80,14 @@ class Array:
         self.max_diff = maxdiff
 
     def find_extrema(self):
+        '''Finds the minimum and maximum values of a numerical list.
+
+        :return: tuple containing the minimum and maximum values of input list
+        :rtype: tuple
+        :raises ImportError: if numpy is not installed
+        :raises TypeError: if a non-numerical list is given
+        :raises ValueError: if a numerical list is not of at least length 2
+        '''
         try:
             from numpy import amin, amax
             if(len(self.array) < 2):
@@ -78,6 +114,14 @@ class Array:
         self.extrema = min_max_out
 
     def find_sum_all(self):
+        '''Method to find the sum of all the elements in an array
+
+        :return: The sum of the elements in list
+        :rtype: int or float
+        :raises ValueError: if infinity is in the input array
+        :raises TypeError: if list is empty or contains non-numericals
+        :raises ImportError: if a required package was not loaded
+        '''
         from numpy import sum
         try:
             if(len(self.array) < 2):
