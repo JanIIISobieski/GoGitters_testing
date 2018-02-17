@@ -1,10 +1,7 @@
-# Unit Testing and Continuous Integration with Travis CI
+# Converting module to class
 
-Package to perform operations on numerical lists:
-* `sum_list()`: to sum all the elements in a numerical lists
-* `min_max()`: to find the maximum and minimum value of the numerical lists
-* `max_diff()`: to find the maximum magnitude difference between consecutive elements
+Converts the functional programming paradigm of the previous assignment to an object oriented one.
 
 For documentation, see [here].
 
-[here]: http://gogitters-array-functions.readthedocs.io/en/latest/
+[here]: http://array-class.readthedocs.io/en/latest/arrayfunctions_class.html#module-arrayfunctions_class
