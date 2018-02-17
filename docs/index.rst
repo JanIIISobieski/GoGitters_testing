@@ -1,10 +1,10 @@
-.. Unit Testing and Docstrings documentation master file, created by
-   sphinx-quickstart on Sat Feb 10 12:29:42 2018.
+.. Array Class documentation master file, created by
+   sphinx-quickstart on Sat Feb 17 13:52:22 2018.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Unit Testing and Docstrings's documentation!
-=======================================================
+Welcome to Array Class's documentation!
+=======================================
 
 .. toctree::
    :maxdepth: 2

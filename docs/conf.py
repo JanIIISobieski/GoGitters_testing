@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
-# Unit Testing and Docstrings documentation build configuration file, created by
-# sphinx-quickstart on Sat Feb 10 12:29:42 2018.
+# Array Class documentation build configuration file, created by
+# sphinx-quickstart on Sat Feb 17 13:52:22 2018.
 #
 # This file is execfile()d with the current directory set to its
 # containing dir.
@@ -46,9 +46,9 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'Unit Testing and Docstrings'
-copyright = '2018, Gabriel Antoniak, Eitan August, Stephanie Hatz'
-author = 'Gabriel Antoniak, Eitan August, Stephanie Hatz'
+project = 'Array Class'
+copyright = '2018, Gabriel Antoniak'
+author = 'Gabriel Antoniak'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -69,7 +69,7 @@ language = None
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This patterns also effect to html_static_path and html_extra_path
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', 'test_arrayfunctions.rst']
+exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'sphinx'
@@ -112,7 +112,7 @@ html_sidebars = {
 # -- Options for HTMLHelp output ------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'UnitTestingandDocstringsdoc'
+htmlhelp_basename = 'ArrayClassdoc'
 
 
 # -- Options for LaTeX output ---------------------------------------------
@@ -139,8 +139,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'UnitTestingandDocstrings.tex', 'Unit Testing and Docstrings Documentation',
-     'Gabriel Antoniak, Eitan August, Stephanie Hatz', 'manual'),
+    (master_doc, 'ArrayClass.tex', 'Array Class Documentation',
+     'Gabriel Antoniak', 'manual'),
 ]
 
 
@@ -149,7 +149,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'unittestinganddocstrings', 'Unit Testing and Docstrings Documentation',
+    (master_doc, 'arrayclass', 'Array Class Documentation',
      [author], 1)
 ]
 
@@ -160,10 +160,10 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'UnitTestingandDocstrings', 'Unit Testing and Docstrings Documentation',
-     author, 'UnitTestingandDocstrings', 'One line description of project.',
+    (master_doc, 'ArrayClass', 'Array Class Documentation',
+     author, 'ArrayClass', 'One line description of project.',
      'Miscellaneous'),
 ]
 
-
+autoclass_content = 'both'
 

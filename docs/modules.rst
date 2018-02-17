@@ -1,8 +1,8 @@
-GoGitters_testing
-=================
+GoGitters_class
+===============
 
 .. toctree::
    :maxdepth: 4
 
-   arrayfunctions
-   test_arrayfunctions
+   arrayfunctions_class
+   test_arrayfunctions_class
